@@ -2,4 +2,4 @@ streamlit
 pandas
 scikit-learn
 xgboost
-joblib
+joblibjoblib==1.4.2
