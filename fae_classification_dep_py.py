@@ -152,6 +152,15 @@ if st.button("✨ Discover My Fairy Type ✨"):
         [prediction]
     )[0]
 
+    fairy_emojis = {
+        "Water Fairy": "💧",
+        "Forest Fairy": "🌲",
+        "Flower Fairy": "🌸",
+        "Moon Fairy": "🌙",
+        "Starlight Fairy": "⭐",
+        "Fire Fairy": "🔥"
+    }
+
     fairy_descriptions = {
         "Water Fairy": "💧 You are calm, adaptable, and deeply connected to your emotions. Like water, you can flow through any situation with grace.",
 
@@ -166,11 +175,13 @@ if st.button("✨ Discover My Fairy Type ✨"):
         "Fire Fairy": "🔥 You are confident, passionate, and energetic. You have a bright personality and aren't afraid to let yourself shine!"
     }
 
-    st.success(f"🧚‍♀️ You are a {fairy_type}! ✨")
+    st.success(
+        f"{fairy_emojis[fairy_type]} You are a {fairy_type}! ✨"
+    )
 
     st.markdown(
         f"""
-        ### 🌸 Your Fairy Personality
+        ### ✨ Your Fairy Personality
 
         {fairy_descriptions[fairy_type]}
 
