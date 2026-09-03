@@ -8,13 +8,17 @@ st.markdown("""
 
     /* Main background */
     .stApp {
-        background: linear-gradient(
-            135deg,
-            #f8efe8 0%,
-            #f3e5df 45%,
-            #e8eee5 100%
-        );
-    }
+    background-image:
+        linear-gradient(
+            rgba(248, 239, 232, 0.82),
+            rgba(232, 238, 229, 0.82)
+        ),
+        url("fairy_background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
     /* Main content */
     .main {
