@@ -2,6 +2,75 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+# 🌸 FaeFinder Custom Styling
+st.markdown("""
+<style>
+
+    /* Main background */
+    .stApp {
+        background: linear-gradient(
+            135deg,
+            #f8efe8 0%,
+            #f3e5df 45%,
+            #e8eee5 100%
+        );
+    }
+
+    /* Main content */
+    .main {
+        background: transparent;
+    }
+
+    /* Title */
+    h1 {
+        color: #5b514b;
+        font-family: Georgia, serif;
+        font-size: 48px !important;
+        letter-spacing: 2px;
+    }
+
+    /* Normal text */
+    p {
+        color: #665d57;
+        font-family: Georgia, serif;
+    }
+
+    /* Labels */
+    label {
+        color: #665d57 !important;
+        font-family: Georgia, serif;
+    }
+
+    /* Sliders */
+    .stSlider > div > div > div > div {
+        background-color: #b8c5ad;
+    }
+
+    /* Select boxes */
+    div[data-baseweb="select"] > div {
+        background-color: #f5eee8;
+        border: 1px solid #d6c7bd;
+        border-radius: 10px;
+    }
+
+    /* Button */
+    .stButton > button {
+        background-color: #8f9f82;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 25px;
+        font-family: Georgia, serif;
+        font-size: 16px;
+    }
+
+    .stButton > button:hover {
+        background-color: #78896c;
+        color: white;
+    }
+
+</style>
+""", unsafe_allow_html=True)
 
 # Load model and label encoders
 model = joblib.load("fairy_type_prediction.pkl")
