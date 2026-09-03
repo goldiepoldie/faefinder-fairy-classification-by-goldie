@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-import joblib as jb
+import joblib
+
 
 # Load model and label encoders
 model = joblib.load("fairy_type_prediction.pkl")
@@ -46,21 +47,21 @@ favorite_color = st.selectbox(
 
 
 # Encode categorical inputs
-favorite_environment_encoded = label_encoders[
-    "Favorite_Environment"
-].transform([favorite_environment])[0]
+favorite_environment_encoded = label_encoders["Favorite_Environment"].transform(
+    [favorite_environment]
+)[0]
 
-favorite_season_encoded = label_encoders[
-    "Favorite_Season"
-].transform([favorite_season])[0]
+favorite_season_encoded = label_encoders["Favorite_Season"].transform(
+    [favorite_season]
+)[0]
 
-favorite_time_encoded = label_encoders[
-    "Favorite_Time"
-].transform([favorite_time])[0]
+favorite_time_encoded = label_encoders["Favorite_Time"].transform(
+    [favorite_time]
+)[0]
 
-favorite_color_encoded = label_encoders[
-    "Favorite_Color"
-].transform([favorite_color])[0]
+favorite_color_encoded = label_encoders["Favorite_Color"].transform(
+    [favorite_color]
+)[0]
 
 
 # Create DataFrame
