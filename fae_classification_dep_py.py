@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+# Load background image
+with open("fairy_background.jpg", "rb") as file:
+    background_image = base64.b64encode(file.read()).decode()
+
 # 🌸 FaeFinder Custom Styling
 st.markdown("""
 <style>
