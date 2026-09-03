@@ -90,4 +90,15 @@ if st.button("✨ Discover My Fairy Type ✨"):
         [prediction]
     )[0]
 
-    st.success(f"🧚‍♀️ You are a {fairy_type}!")
+    st.success(f"🧚‍♀️ You are a {fairy_type}! 🌙")
+
+    st.markdown(
+        f"""
+        ### ✨ Your Fairy Personality
+
+        Welcome to the magical world of **{fairy_type}**! 🧚‍♀️
+
+        Your personality, preferences, and magical energy have revealed
+        your fairy type. ✨🌸
+        """
+    )
