@@ -41,11 +41,16 @@ st.markdown("""
         font-family: Georgia, serif;
     }
 
-    /* Sliders */
-    .stSlider > div > div > div > div {
-        background-color: #b8c5ad;
-    }
+   /* Slider track */
+.stSlider [data-baseweb="slider"] [role="slider"] {
+    background-color: #8f9f82;
+}
 
+/* Slider filled portion */
+.stSlider [data-baseweb="slider"] > div > div {
+    background-color: #8f9f82;
+}
+    
     /* Select boxes */
     div[data-baseweb="select"] > div {
         background-color: #f5eee8;
