@@ -9,7 +9,7 @@ label_encoders = joblib.load("fairy_label_encoders.pkl")
 
 
 # Title
-st.title("🧚‍♀️ FaeFinder")
+st.title("💗 FaeFinder")
 st.write("✨ Discover which type of fairy you are! ✨")
 
 
@@ -20,7 +20,7 @@ social_energy = st.slider("💃 Social Energy", 1, 10, 5)
 nature_love = st.slider("🌱 Love for Nature", 1, 10, 5)
 dreaminess = st.slider("🌙 Dreaminess", 1, 10, 5)
 confidence = st.slider("✨ Confidence", 1, 10, 5)
-emotionality = st.slider("💗 Emotionality", 1, 10, 5)
+emotionality = st.slider("💞 Emotionality", 1, 10, 5)
 curiosity = st.slider("🔮 Curiosity", 1, 10, 5)
 
 
@@ -96,7 +96,7 @@ if st.button("✨ Discover My Fairy Type ✨"):
         f"""
         ### ✨ Your Fairy Personality
 
-        Welcome to the magical world of **{fairy_type}**! 🧚‍♀️
+        Welcome to the magical world of **{fairy_type}**! ✨
 
         Your personality, preferences, and magical energy have revealed
         your fairy type. ✨🌸
