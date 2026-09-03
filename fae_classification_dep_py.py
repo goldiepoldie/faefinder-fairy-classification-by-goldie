@@ -90,15 +90,28 @@ if st.button("✨ Discover My Fairy Type ✨"):
         [prediction]
     )[0]
 
-    st.success(f"🧚‍♀️ You are a {fairy_type}! 🌙")
+    fairy_descriptions = {
+        "Water Fairy": "💧 You are calm, adaptable, and deeply connected to your emotions. Like water, you can flow through any situation with grace.",
+
+        "Forest Fairy": "🌲 You are adventurous, grounded, and happiest when surrounded by nature. You have a strong connection with the world around you.",
+
+        "Flower Fairy": "🌸 You are creative, gentle, and drawn to beauty. You bring color, warmth, and happiness wherever you go.",
+
+        "Moon Fairy": "🌙 You are dreamy, intuitive, and mysterious. You find magic in quiet moments and feel most at home under the night sky.",
+
+        "Starlight Fairy": "⭐ You are curious, imaginative, and full of wonder. You are always dreaming about new possibilities and adventures.",
+
+        "Fire Fairy": "🔥 You are confident, passionate, and energetic. You have a bright personality and aren't afraid to let yourself shine!"
+    }
+
+    st.success(f"🧚‍♀️ You are a {fairy_type}! ✨")
 
     st.markdown(
         f"""
-        ### ✨ Your Fairy Personality
+        ### 🌸 Your Fairy Personality
 
-        Welcome to the magical world of **{fairy_type}**! ✨
+        {fairy_descriptions[fairy_type]}
 
-        Your personality, preferences, and magical energy have revealed
-        your fairy type. ✨🌸
+        ✨ Welcome to the magical world of **{fairy_type}**! ✨
         """
     )
