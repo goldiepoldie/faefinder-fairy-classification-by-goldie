@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import joblib as jb
 
 # Load model and label encoders
 model = joblib.load("fairy_type_prediction.pkl")
