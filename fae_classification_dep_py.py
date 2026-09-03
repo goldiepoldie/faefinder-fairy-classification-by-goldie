@@ -1,73 +1,53 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import base64
 
 # Load background image
 with open("fairy_background.jpg", "rb") as file:
     background_image = base64.b64encode(file.read()).decode()
 
 # 🌸 FaeFinder Custom Styling
-st.markdown("""
+st.markdown(f"""
 <style>
 
-    /* Main background */
-    .stApp {
-    background-image:
-        linear-gradient(
-            rgba(248, 239, 232, 0.82),
-            rgba(232, 238, 229, 0.82)
-        ),
-        url("fairy_background.jpg");
+    .stApp {{
+        background-image:
+            linear-gradient(
+                rgba(248, 239, 232, 0.82),
+                rgba(232, 238, 229, 0.82)
+            ),
+            url("data:image/jpeg;base64,{background_image}");
 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }}
 
-    /* Main content */
-    .main {
-        background: transparent;
-    }
-
-    /* Title */
-    h1 {
+    h1 {{
         color: #5b514b;
         font-family: Georgia, serif;
         font-size: 48px !important;
         letter-spacing: 2px;
-    }
+    }}
 
-    /* Normal text */
-    p {
+    p {{
         color: #665d57;
         font-family: Georgia, serif;
-    }
+    }}
 
-    /* Labels */
-    label {
+    label {{
         color: #665d57 !important;
         font-family: Georgia, serif;
-    }
+    }}
 
-   /* Slider track */
-.stSlider [data-baseweb="slider"] [role="slider"] {
-    background-color: #8f9f82;
-}
-
-/* Slider filled portion */
-.stSlider [data-baseweb="slider"] > div > div {
-    background-color: #8f9f82;
-}
-    
-    /* Select boxes */
-    div[data-baseweb="select"] > div {
+    div[data-baseweb="select"] > div {{
         background-color: #f5eee8;
         border: 1px solid #d6c7bd;
         border-radius: 10px;
-    }
+    }}
 
-    /* Button */
-    .stButton > button {
+    .stButton > button {{
         background-color: #8f9f82;
         color: white;
         border: none;
@@ -75,12 +55,12 @@ st.markdown("""
         padding: 10px 25px;
         font-family: Georgia, serif;
         font-size: 16px;
-    }
+    }}
 
-    .stButton > button:hover {
+    .stButton > button:hover {{
         background-color: #78896c;
         color: white;
-    }
+    }}
 
 </style>
 """, unsafe_allow_html=True)
