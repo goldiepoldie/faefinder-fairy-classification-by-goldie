@@ -47,20 +47,29 @@ st.markdown(f"""
         border-radius: 10px;
     }}
 
-    .stButton > button {{
-        background-color: #8f9f82;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        padding: 10px 25px;
-        font-family: Georgia, serif;
-        font-size: 16px;
-    }}
+   .stButton > button {
+    background-color: #8f9f82;
+    color: #fffaf5;
+    border: 1px solid #8f9f82;
+    border-radius: 25px;
+    padding: 10px 28px;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
 
-    .stButton > button:hover {{
-        background-color: #78896c;
-        color: white;
-    }}
+.stButton > button:hover {
+    background-color: #78896c;
+    border-color: #78896c;
+    color: #fffaf5;
+}
+
+.stButton > button:focus {
+    background-color: #8f9f82;
+    border-color: #8f9f82;
+    color: #fffaf5;
+    box-shadow: 0 0 0 2px rgba(143, 159, 130, 0.25);
+}
 
    /* Fairy Result Card */
 .fairy-result {{
