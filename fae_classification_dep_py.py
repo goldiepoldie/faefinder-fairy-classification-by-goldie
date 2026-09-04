@@ -175,9 +175,19 @@ if st.button("✨ Discover My Fairy Type ✨"):
         "Fire Fairy": "🔥 You are confident, passionate, and energetic. You have a bright personality and aren't afraid to let yourself shine!"
     }
 
-    st.success(
-        f"{fairy_emojis[fairy_type]} You are a {fairy_type}! ✨"
-    )
+    st.markdown(
+    f"""
+    <div class="fairy-result">
+        <div class="fairy-result-title">
+            {fairy_emojis[fairy_type]} You are a {fairy_type}! {fairy_emojis[fairy_type]}
+        </div>
+        <div class="fairy-result-text">
+            ✨ Your magical personality has been revealed ✨
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
     st.markdown(
         f"""
