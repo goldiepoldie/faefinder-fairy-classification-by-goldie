@@ -47,7 +47,7 @@ st.markdown(f"""
         border-radius: 10px;
     }}
 
-   .stButton > button {
+   .stButton > button {{
     background-color: #8f9f82;
     color: #fffaf5;
     border: 1px solid #8f9f82;
@@ -56,20 +56,20 @@ st.markdown(f"""
     font-family: Georgia, serif;
     font-size: 16px;
     transition: all 0.3s ease;
-}
+}}
 
-.stButton > button:hover {
+.stButton > button:hover {{
     background-color: #78896c;
     border-color: #78896c;
     color: #fffaf5;
-}
+}}
 
-.stButton > button:focus {
+.stButton > button:focus {{
     background-color: #8f9f82;
     border-color: #8f9f82;
     color: #fffaf5;
     box-shadow: 0 0 0 2px rgba(143, 159, 130, 0.25);
-}
+}}
 
    /* Fairy Result Card */
 .fairy-result {{
