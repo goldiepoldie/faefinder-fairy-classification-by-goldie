@@ -62,26 +62,36 @@ st.markdown(f"""
         border-radius: 10px;
     }}
 
-    /* 🌿 Sliders */
-    div[data-testid="stSlider"] [data-baseweb="slider"] > div:first-child {{
-        background: #d8d5c8;
-    }}
+    /* 🌿 Fairy-style Sliders */
 
-    div[data-testid="stSlider"] [data-baseweb="slider"] > div:nth-child(2) {{
-        background: #8f9f82;
-    }}
+/* Slider track */
+div[data-testid="stSlider"] [data-baseweb="slider"] {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
-    div[data-testid="stSlider"] [role="slider"] {{
-        background-color: #8f9f82;
-        border: 3px solid #f5eee8;
-        box-shadow: 0 2px 6px rgba(90, 75, 65, 0.2);
-    }}
+/* Full slider track */
+div[data-testid="stSlider"] [data-baseweb="slider"] > div {
+    background: #d8d5c8 !important;
+}
 
-    /* 🌿 Slider Value */
-    div[data-testid="stSlider"] [data-testid="stThumbValue"] {{
-        color: #665d57;
-        font-family: Georgia, serif;
-    }}
+/* Selected portion of slider */
+div[data-testid="stSlider"] [data-baseweb="slider"] > div > div {
+    background: #8f9f82 !important;
+}
+
+/* Slider knob */
+div[data-testid="stSlider"] [role="slider"] {
+    background-color: #8f9f82 !important;
+    border: 3px solid #f5eee8 !important;
+    box-shadow: 0 2px 7px rgba(90, 75, 65, 0.25);
+}
+
+/* Slider number */
+div[data-testid="stSlider"] [data-testid="stThumbValue"] {
+    color: #665d57 !important;
+    font-family: Georgia, serif !important;
+}
 
     /* ✨ Button */
     .stButton > button {{
