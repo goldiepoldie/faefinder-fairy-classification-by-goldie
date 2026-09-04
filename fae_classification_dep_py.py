@@ -11,6 +11,7 @@ with open("fairy_background.jpg", "rb") as file:
 st.markdown(f"""
 <style>
 
+    /* 🌿 Main Background */
     .stApp {{
         background-image:
             linear-gradient(
@@ -24,6 +25,7 @@ st.markdown(f"""
         background-attachment: fixed;
     }}
 
+    /* 💗 Main Title */
     h1 {{
         color: #5b514b;
         font-family: Georgia, serif;
@@ -31,6 +33,7 @@ st.markdown(f"""
         letter-spacing: 2px;
     }}
 
+    /* 🌸 Section Headings */
     h2 {{
         color: #5b514b !important;
         font-family: Georgia, serif;
@@ -40,22 +43,47 @@ st.markdown(f"""
         margin-bottom: 15px;
     }}
 
+    /* ✨ Normal Text */
     p {{
         color: #665d57;
         font-family: Georgia, serif;
     }}
 
+    /* 🎀 Input Labels */
     label {{
         color: #665d57 !important;
         font-family: Georgia, serif;
     }}
 
+    /* 🌸 Dropdowns */
     div[data-baseweb="select"] > div {{
         background-color: #f5eee8;
         border: 1px solid #d6c7bd;
         border-radius: 10px;
     }}
 
+    /* 🌿 Sliders */
+    div[data-testid="stSlider"] [data-baseweb="slider"] > div:first-child {{
+        background: #d8d5c8;
+    }}
+
+    div[data-testid="stSlider"] [data-baseweb="slider"] > div:nth-child(2) {{
+        background: #8f9f82;
+    }}
+
+    div[data-testid="stSlider"] [role="slider"] {{
+        background-color: #8f9f82;
+        border: 3px solid #f5eee8;
+        box-shadow: 0 2px 6px rgba(90, 75, 65, 0.2);
+    }}
+
+    /* 🌿 Slider Value */
+    div[data-testid="stSlider"] [data-testid="stThumbValue"] {{
+        color: #665d57;
+        font-family: Georgia, serif;
+    }}
+
+    /* ✨ Button */
     .stButton > button {{
         background-color: #8f9f82;
         color: #fffaf5;
@@ -80,7 +108,7 @@ st.markdown(f"""
         box-shadow: 0 0 0 2px rgba(143, 159, 130, 0.25);
     }}
 
-    /* Fairy Result Card */
+    /* 🧚 Fairy Result Card */
     .fairy-result {{
         background: rgba(255, 248, 242, 0.94);
         border: 1px solid rgba(180, 160, 145, 0.6);
@@ -117,7 +145,7 @@ model = joblib.load("fairy_type_prediction.pkl")
 label_encoders = joblib.load("fairy_label_encoders.pkl")
 
 
-# Title
+# 💗 Title
 st.title("💗 FaeFinder")
 st.write("✨ Discover which type of fairy you are! ✨")
 
@@ -194,7 +222,7 @@ df = pd.DataFrame({
 })
 
 
-# Prediction
+# 🧚 Prediction
 if st.button("✨ Discover My Fairy Type ✨"):
 
     prediction = model.predict(df)[0]
@@ -226,13 +254,14 @@ if st.button("✨ Discover My Fairy Type ✨"):
         "Fire Fairy": "🔥 You are confident, passionate, and energetic. You have a bright personality and aren't afraid to let yourself shine!"
     }
 
-    # Fairy Result Card
+    # 🧚 Fairy Result Card
     st.markdown(
         f"""
         <div class="fairy-result">
             <div class="fairy-result-title">
                 {fairy_emojis[fairy_type]} You are a {fairy_type}! {fairy_emojis[fairy_type]}
             </div>
+
             <div class="fairy-result-text">
                 ✨ Your magical personality has been revealed ✨
             </div>
@@ -241,6 +270,7 @@ if st.button("✨ Discover My Fairy Type ✨"):
         unsafe_allow_html=True
     )
 
+    # 🌸 Fairy Personality
     st.markdown(
         f"""
         ### ✨ Your Fairy Personality
