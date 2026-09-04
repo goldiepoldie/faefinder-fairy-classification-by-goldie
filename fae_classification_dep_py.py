@@ -31,6 +31,15 @@ st.markdown(f"""
         letter-spacing: 2px;
     }}
 
+    h2 {{
+        color: #5b514b !important;
+        font-family: Georgia, serif;
+        font-size: 28px !important;
+        letter-spacing: 1px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }}
+
     p {{
         color: #665d57;
         font-family: Georgia, serif;
@@ -47,60 +56,61 @@ st.markdown(f"""
         border-radius: 10px;
     }}
 
-   .stButton > button {{
-    background-color: #8f9f82;
-    color: #fffaf5;
-    border: 1px solid #8f9f82;
-    border-radius: 25px;
-    padding: 10px 28px;
-    font-family: Georgia, serif;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}}
+    .stButton > button {{
+        background-color: #8f9f82;
+        color: #fffaf5;
+        border: 1px solid #8f9f82;
+        border-radius: 25px;
+        padding: 10px 28px;
+        font-family: Georgia, serif;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }}
 
-.stButton > button:hover {{
-    background-color: #78896c;
-    border-color: #78896c;
-    color: #fffaf5;
-}}
+    .stButton > button:hover {{
+        background-color: #78896c;
+        border-color: #78896c;
+        color: #fffaf5;
+    }}
 
-.stButton > button:focus {{
-    background-color: #8f9f82;
-    border-color: #8f9f82;
-    color: #fffaf5;
-    box-shadow: 0 0 0 2px rgba(143, 159, 130, 0.25);
-}}
+    .stButton > button:focus {{
+        background-color: #8f9f82;
+        border-color: #8f9f82;
+        color: #fffaf5;
+        box-shadow: 0 0 0 2px rgba(143, 159, 130, 0.25);
+    }}
 
-   /* Fairy Result Card */
-.fairy-result {{
-    background: rgba(255, 248, 242, 0.94);
-    border: 1px solid rgba(180, 160, 145, 0.6);
-    border-radius: 22px;
-    padding: 30px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(90, 75, 65, 0.15);
-}}
+    /* Fairy Result Card */
+    .fairy-result {{
+        background: rgba(255, 248, 242, 0.94);
+        border: 1px solid rgba(180, 160, 145, 0.6);
+        border-radius: 22px;
+        padding: 30px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(90, 75, 65, 0.15);
+    }}
 
-.fairy-result-title {{
-    color: #514943;
-    font-family: Georgia, serif;
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-}}
+    .fairy-result-title {{
+        color: #514943;
+        font-family: Georgia, serif;
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+    }}
 
-.fairy-result-text {{
-    color: #776b63;
-    font-family: Georgia, serif;
-    font-size: 17px;
-    font-style: italic;
-}}
+    .fairy-result-text {{
+        color: #776b63;
+        font-family: Georgia, serif;
+        font-size: 17px;
+        font-style: italic;
+    }}
 
 </style>
 """, unsafe_allow_html=True)
+
 
 # Load model and label encoders
 model = joblib.load("fairy_type_prediction.pkl")
@@ -112,7 +122,9 @@ st.title("💗 FaeFinder")
 st.write("✨ Discover which type of fairy you are! ✨")
 
 
-# Personality Inputs
+# 🌿 Personality Inputs
+st.markdown("## 🌿 Your Magical Traits")
+
 creativity = st.slider("🎨 Creativity", 1, 10, 5)
 adventure = st.slider("🌿 Adventure", 1, 10, 5)
 social_energy = st.slider("💃 Social Energy", 1, 10, 5)
@@ -123,7 +135,9 @@ emotionality = st.slider("💞 Emotionality", 1, 10, 5)
 curiosity = st.slider("🔮 Curiosity", 1, 10, 5)
 
 
-# Favorite Preferences
+# 🌸 Favorite Preferences
+st.markdown("## 🌸 Your Enchanted Preferences")
+
 favorite_environment = st.selectbox(
     "🏡 What's your favorite environment?",
     label_encoders["Favorite_Environment"].classes_
@@ -212,19 +226,20 @@ if st.button("✨ Discover My Fairy Type ✨"):
         "Fire Fairy": "🔥 You are confident, passionate, and energetic. You have a bright personality and aren't afraid to let yourself shine!"
     }
 
+    # Fairy Result Card
     st.markdown(
-    f"""
-    <div class="fairy-result">
-        <div class="fairy-result-title">
-            {fairy_emojis[fairy_type]} You are a {fairy_type}! {fairy_emojis[fairy_type]}
+        f"""
+        <div class="fairy-result">
+            <div class="fairy-result-title">
+                {fairy_emojis[fairy_type]} You are a {fairy_type}! {fairy_emojis[fairy_type]}
+            </div>
+            <div class="fairy-result-text">
+                ✨ Your magical personality has been revealed ✨
+            </div>
         </div>
-        <div class="fairy-result-text">
-            ✨ Your magical personality has been revealed ✨
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+        """,
+        unsafe_allow_html=True
+    )
 
     st.markdown(
         f"""
