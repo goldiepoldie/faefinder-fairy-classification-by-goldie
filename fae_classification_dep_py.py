@@ -62,6 +62,33 @@ st.markdown(f"""
         color: white;
     }}
 
+    .fairy-result {
+    background: rgba(255, 248, 242, 0.94);
+    border: 1px solid rgba(180, 160, 145, 0.6);
+    border-radius: 22px;
+    padding: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(90, 75, 65, 0.15);
+}
+
+.fairy-result-title {
+    color: #514943;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.fairy-result-text {
+    color: #776b63;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
